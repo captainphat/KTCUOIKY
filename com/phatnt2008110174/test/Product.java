@@ -96,6 +96,6 @@ public abstract class Product {
         System.out.printf("│%11s│%11s│%11s│%15s│%11s│%11s│\n",getType(),getName(),getID(),getPrice(),getInventory(),FormatDate.formatDate.format(this.getDate()));
     }
     public void Statistic(){
-        System.out.printf("│%11sSum of Product: │%19s│%11s Sum of Price: │%19s│");
+        
     }
 }
