@@ -5,7 +5,6 @@
 package com.phatnt2008110174.test;
 
 import java.util.ArrayList;
-
 import java.util.Date;
 
 public class Manager {
@@ -38,16 +37,12 @@ public class Manager {
             System.out.println("Removed!");
             return  list.remove(product);
         }
-        else{
-            System.out.println("Not found !!!");
-        }
-
     } 
-
+    System.out.println("Not found !!!");
     return false;
   }
     public boolean changeName(String iD){
-        boolean check = true ;
+      
         for (Product product : list){
            
             if(product.getID().equalsIgnoreCase(iD)){
@@ -60,17 +55,14 @@ public class Manager {
                 ClearScreen.clear();
                 System.out.println("ID of Product: "+iD);
                 System.out.println("Change name to: "+ product.getName());
-                return check = true;
-            }
-            else{
-                System.out.println("Not found !!!");
-            }
-            
+                return  true;
+        } 
         }
-        return check;
+        System.out.println("Not found !!!");
+        return false;
     }
     public boolean changePrice(String iD){
-        boolean check = true ;
+       
         for (Product product : list){
            
             if(product.getID().equalsIgnoreCase(iD)){
@@ -81,17 +73,14 @@ public class Manager {
                 ClearScreen.clear();
                 System.out.println("ID of Product: "+iD);
                 System.out.println("Change Price to: "+ product.getPrice());
-                return check = true;
-            }
-            else{
-                System.out.println("Not found !!!");
+                return  true;
             }
             
-        }
-        return check;
+        } 
+        System.out.println("Not found !!!");
+        return false;
     }
     public boolean changeImprotDate(String iD){
-        boolean check = true ;
         for (Product product : list){
            
             if(product.getID().equalsIgnoreCase(iD)){
@@ -106,17 +95,14 @@ public class Manager {
                 ClearScreen.clear();
                 System.out.println("ID of Product: "+iD);
                 System.out.println("Change improt date to: "+ FormatDate.formatDate.format(product.getDate()));
-                return check = true;
+                return  true;
             }
-            else{
-                System.out.println("Not found !!!");
-            }
-            
         }
-        return check;
+        System.out.println("Not fount");
+        return false;
     }
     public boolean changeQuantity(String iD){
-        boolean check = true ;
+        
         for (Product product : list){
            
             if(product.getID().equalsIgnoreCase(iD)){
@@ -127,13 +113,14 @@ public class Manager {
                 ClearScreen.clear();
                 System.out.println("ID of Product: "+iD);
                 System.out.println("Change Price to: "+ product.getInventory());
-                return check = true;
+                return true;
             }
-            else{
-                System.out.println("Not found !!!");
-            }
+            
+            
+            
         }
-        return check;
+            System.out.println("Not found !!!");
+        return false;
     }
     public Product SearchFOODType(String type){
         Product p = null;
@@ -147,24 +134,11 @@ public class Manager {
         }
         return p;
     }
-    // public void SortPrice (){
-    //     Collections.sort(list, new Comparator<Product>() {
-    //     @Override
-    //     public int compare(Product product1, Product product2) {
-    //         if(product1.getPrice() < product2.getPrice()){
-    //             return -1;
-    //         }else{
-    //             if(product1.getPrice() == product2.getPrice()){
-    //                 return 0;
-    //             }else{
-    //                 return -1;
-    //             }
-    //         }
-    //     }
-    //    });
-    //    for(int i = 0; i < list.size();i++){
-    //        show();
-    //    }
-    // }
+    public void SortPrice (){
+        
+       for(int i = 0; i < list.size();i++){
+           show();
+       }
+    }
 }
 
