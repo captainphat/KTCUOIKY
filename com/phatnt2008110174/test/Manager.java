@@ -5,6 +5,7 @@
 package com.phatnt2008110174.test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class Manager {
@@ -135,10 +136,11 @@ public class Manager {
         return p;
     }
     public void SortPrice (){
-        
-       for(int i = 0; i < list.size();i++){
-           show();
+       Collections.sort(list , new CompareP());
+       for (Product product : list){
+           product.print();
        }
     }
+
 }
 

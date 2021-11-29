@@ -253,8 +253,8 @@ public void menuSort(){
                 System.out.println("sort Import date");
             case 3 :
                 System.out.println("Sort Price");
-                // list.SortPrice();
-                list.show();
+                list.SortPrice();
+                // list.show();
                 getMenu();
             default:
                 break;

@@ -10,7 +10,10 @@ public class test {
     public static void main(String[] args) {
         // Manager list = new Manager();
         // // FoodManager foodManager = new FoodManager();
+        // Product product ;
+        
         // Food carrot = new Food("Carrot", 4, 500,FormatDate.date("3/2/2020"));
+        // carrot.print();
         // Electronic LaptopOF = new Electronic("DELL inspiron 3505", 700, 52, FormatDate.date("1/11/2021"));
         // Electronic LaptopGM1 = new Electronic("MSI Creator Z16", 3200, 20, FormatDate.date("2/9/2021"));
         //  Electronic TVSamSung = new Electronic("TV SamSung 58RU7100", 1200, 30, FormatDate.date("15/11/2021"));
@@ -35,5 +38,6 @@ public class test {
         // list.show();
         Menu menu = new Menu();
         menu.menu();
+        
     }
 }
