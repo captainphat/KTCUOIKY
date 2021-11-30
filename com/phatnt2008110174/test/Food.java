@@ -9,7 +9,7 @@ import java.util.Date;
 public class Food extends Product {
     static int count;
     public Food(String Name, double Price, int Inventory, Date date) {
-        super(Name,"FD"+count, Price, Inventory,"FOOD", date);
+        super(Name,"FD"+" "+count, Price, Inventory,"FOOD", date);
        count++;
        
     }

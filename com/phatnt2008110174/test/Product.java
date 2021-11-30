@@ -98,4 +98,13 @@ public abstract class Product {
     public void Statistic(){
         
     }
+    // public int splitID(){
+        
+    //         String txt[] = getID().split(" ");
+    //         String numIDString = txt[1];
+    //         int numID = Integer.parseInt(numIDString);
+            
+    //         return numID;
+      
+    // }
 }

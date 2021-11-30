@@ -38,12 +38,10 @@ public  void setChoic(int choic) {
 }
  
     public  void getMenu (){
+        ClearScreen.clear();
         menu();
     }
-    
-    public  void menu(){
-        int x;
-        do{
+    public void autoInput(){
             list.add(Carrot);
             list.add(Cup);
             list.add(Tomato);
@@ -64,6 +62,11 @@ public  void setChoic(int choic) {
             list.add(Fish);
             list.add(Plate);
             list.add(PS5);
+    }
+    public  void menu(){
+        int x;
+        do{
+            
             list.show();
             System.out.println("          Menu            ");
             System.out.println("1. ADD  ");
@@ -89,7 +92,6 @@ public  void setChoic(int choic) {
                     MeneChange();
                     break;
                 case 4:
-                    //xuat
                     menuSort();
                     break;
                 default:
@@ -254,8 +256,10 @@ public void menuSort(){
             case 3 :
                 System.out.println("Sort Price");
                 list.SortPrice();
-                // list.show();
+                ClearScreen.stop();
+                
                 getMenu();
+                
             default:
                 break;
         }

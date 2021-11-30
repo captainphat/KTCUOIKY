@@ -9,7 +9,7 @@ import java.util.Date;
 public class Electronic extends Product {
     static int Count;
     public Electronic(String Name, double Price, int Inventory, Date date) {
-        super(Name,"EC"+Count, Price, Inventory, "Electronic", date);
+        super(Name,"EC"+" "+Count, Price, Inventory, "Electronic", date);
         Count++;
     }
 

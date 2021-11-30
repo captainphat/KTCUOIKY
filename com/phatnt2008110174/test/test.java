@@ -36,7 +36,9 @@ public class test {
         // list.remove(carrot);
 
         // list.show();
+        
         Menu menu = new Menu();
+        menu.autoInput();
         menu.menu();
         
     }

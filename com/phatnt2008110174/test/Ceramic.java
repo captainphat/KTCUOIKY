@@ -9,7 +9,7 @@ import java.util.Date;
 public class Ceramic extends Product {
     static int Count;
     public Ceramic(String Name,double Price, int Inventory, Date date) {
-        super(Name, "CC"+Count,Price, Inventory, "CERAMIC", date);
+        super(Name, "CC"+" "+Count,Price, Inventory, "CERAMIC", date);
         Count++;
         
         

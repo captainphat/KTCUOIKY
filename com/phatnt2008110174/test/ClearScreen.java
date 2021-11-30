@@ -23,5 +23,11 @@ public class ClearScreen {
 
             }
 
-    }      
+    }
+    
+    static public void stop(){
+        String stop;
+        System.out.println("Nhấn enter để tiếp tục");
+        stop = InputTool.input.nextLine();
+    }
 }
