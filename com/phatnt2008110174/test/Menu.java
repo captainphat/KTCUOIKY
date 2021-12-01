@@ -240,31 +240,51 @@ public void menuSort(){
         System.out.println("    Sort    ");
         System.out.println("1.Type");
         System.out.println("2.Import date");
-        System.out.println("3.Price");
-        System.out.println("4.Type & import date");
-        System.out.println("5.Type & price");
+        System.out.println("3.Price Increase");
+        System.out.println("4.Price Decrease");
+        System.out.println("5.Date New");
+        System.out.println("6.Date Oldest");
+        System.out.println("7.Type & import date");
+        System.out.println("8.Type & price");
         System.out.print("Your choose: ");
         int a = InputTool.input.nextInt();
         setChoic(a);
         
         switch (getChoic()) {
             case 1:
-                System.out.println("Sort Type");
+                list.sortID();
+                ClearScreen.stop();
+                // list.show();
+                getMenu();
                 break;
             case 2:
                 System.out.println("sort Import date");
             case 3 :
-                System.out.println("Sort Price");
-                list.SortPrice();
+                System.out.println("Sort Price Increase");
+                list.sortPriceIncrease();
                 ClearScreen.stop();
-                
+                 getMenu();
+            case 4:
+                System.out.println("Sort Price Decrease");
+                list.sortPriceDecrease();
+                ClearScreen.stop();
                 getMenu();
-                
+            case 5:
+                System.out.println("Sort Date New");
+                list.sortDateNew();
+                ClearScreen.stop();
+                getMenu();
+            case 6:
+                System.out.println("Sort Date Oldest");
+                list.sortDateOld();
+                ClearScreen.stop();
+                getMenu();
             default:
-                break;
+                menuSort();
         }
     }while(getChoic()<0 && getChoic() != 0);
 }
+
 }
 
 

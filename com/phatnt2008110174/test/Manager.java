@@ -7,6 +7,7 @@ package com.phatnt2008110174.test;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class Manager {
     private  ArrayList<Product> list = new ArrayList<>();
@@ -23,8 +24,7 @@ public class Manager {
         System.out.println("|===========|===================|===========|=============|==============|==================|");
         for (Product product: list){
                 
-            product.print();  
-                
+            product.print();        
                
         } 
         System.out.println("=============================================================================================");
@@ -123,7 +123,7 @@ public class Manager {
             System.out.println("Not found !!!");
         return false;
     }
-    public Product SearchFOODType(String type){
+    public Product searchFOODType(String type){
         Product p = null;
         for (Product product : list){
             if (product instanceof Food){
@@ -135,12 +135,43 @@ public class Manager {
         }
         return p;
     }
-    public void SortPrice (){
-       Collections.sort(list , new CompareP());
+    public void sortPriceIncrease (){
+       Collections.sort(list , new CompareUP());
        for (Product product : list){
            product.print();
        }
     }
-
+    public void sortPriceDecrease (){
+        Collections.sort(list, new CompareDow());
+        for (Product product : list){
+            product.print();
+        }
+    }
+    public void sortID(){
+        Collections.sort(list, new ComparatorID());
+        // for (Product product : list){
+        //    if(product instanceof Food){
+        //        product.print();
+        //    }
+        // }
+        // for (Product product : list) {
+        //     if(product instanceof Ceramic){
+        //         product.print();
+        //     }
+        // }
+        // for (Product product : list) {
+        //     if(product instanceof Electronic){
+        //         product.print();
+        //     }
+        // }
+        // System.out.println("*********************");
+        // show();
+    }
+    public void sortDateNew(){
+        Collections.sort(list, new CompareDateNew());
+    }
+    public void sortDateOld(){
+        Collections.sort(list, new CompareDateOld());
+    }
 }
 

@@ -6,11 +6,12 @@ package com.phatnt2008110174.test;
 
 import java.util.Comparator;
 
-// public class ComparatorID implements Comparator<Product> {
+public class ComparatorID implements Comparator<Product> {
 
-//     @Override
-//     public int compare(Product o1, Product o2) {
-//             if(o1.get)
-//     }
+    @Override
+    public int compare(Product o1, Product o2) {
+           return o1.getID().compareTo(o2.getID());
+                
+    }
     
-// }
+}

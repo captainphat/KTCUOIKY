@@ -11,7 +11,6 @@ public class Food extends Product {
     public Food(String Name, double Price, int Inventory, Date date) {
         super(Name,"FD"+" "+count, Price, Inventory,"FOOD", date);
        count++;
-       
     }
     
     public Food() {}

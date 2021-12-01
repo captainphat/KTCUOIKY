@@ -6,7 +6,7 @@ package com.phatnt2008110174.test;
 
 import java.util.Comparator;
 
-public class CompareP implements Comparator<Product> {
+public class CompareUP implements Comparator<Product> {
 
     @Override
     public int compare(Product product1, Product product2) {
