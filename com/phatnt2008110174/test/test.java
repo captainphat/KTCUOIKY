@@ -39,7 +39,7 @@ public class test {
         
         Menu menu = new Menu();
         menu.autoInput();
-        menu.menu();
+        menu.getMenu();
         
     }
 }

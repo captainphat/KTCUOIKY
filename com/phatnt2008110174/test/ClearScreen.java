@@ -27,7 +27,7 @@ public class ClearScreen {
     
     static public void stop(){
         
-        System.out.println("Nhấn enter để tiếp tục");
-        String stop = InputTool.input.nextLine();
+        System.out.println("Enter to continued");
+        InputTool.input.nextLine();
     }
 }

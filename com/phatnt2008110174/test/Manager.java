@@ -7,13 +7,14 @@ package com.phatnt2008110174.test;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
+
 
 public class Manager {
     private  ArrayList<Product> list = new ArrayList<>();
     public void add (Product product){
         list.add(product);
     }
+
     public void show(){
 
         System.out.println("=============================================================================================");
@@ -30,6 +31,20 @@ public class Manager {
         System.out.println("=============================================================================================");
     }
 
+    public void showHead(){
+
+        System.out.println("=============================================================================================");
+        
+        System.out.println("|   Type    |        Name       |    ID     |    Price    |  Quantity    |   Import Date    |");
+
+        System.out.println("|===========|===================|===========|=============|==============|==================|");
+    }
+    public void showEnd(){
+
+        System.out.println("=============================================================================================");
+
+    }
+
   public boolean RemoveID(String iD){
     for (Product product : list) {
         
@@ -42,6 +57,7 @@ public class Manager {
     System.out.println("Not found !!!");
     return false;
   }
+
     public boolean changeName(String iD){
       
         for (Product product : list){
@@ -62,6 +78,7 @@ public class Manager {
         System.out.println("Not found !!!");
         return false;
     }
+
     public boolean changePrice(String iD){
        
         for (Product product : list){
@@ -81,6 +98,7 @@ public class Manager {
         System.out.println("Not found !!!");
         return false;
     }
+
     public boolean changeImprotDate(String iD){
         for (Product product : list){
            
@@ -102,6 +120,7 @@ public class Manager {
         System.out.println("Not fount");
         return false;
     }
+
     public boolean changeQuantity(String iD){
         
         for (Product product : list){
@@ -123,6 +142,7 @@ public class Manager {
             System.out.println("Not found !!!");
         return false;
     }
+
     public Product searchFOODType(String type){
         Product p = null;
         for (Product product : list){
@@ -135,43 +155,95 @@ public class Manager {
         }
         return p;
     }
+
     public void sortPriceIncrease (){
        Collections.sort(list , new CompareUP());
        for (Product product : list){
            product.print();
        }
     }
+
     public void sortPriceDecrease (){
         Collections.sort(list, new CompareDow());
         for (Product product : list){
             product.print();
         }
     }
+
     public void sortID(){
         Collections.sort(list, new ComparatorID());
-        // for (Product product : list){
-        //    if(product instanceof Food){
-        //        product.print();
-        //    }
-        // }
-        // for (Product product : list) {
-        //     if(product instanceof Ceramic){
-        //         product.print();
-        //     }
-        // }
-        // for (Product product : list) {
-        //     if(product instanceof Electronic){
-        //         product.print();
-        //     }
-        // }
-        // System.out.println("*********************");
-        // show();
+       showHead();
+       for (Product product : list){
+        if(product instanceof Food){
+            product.print();
+        }
+     }
+
+     for (Product product : list) {
+         if(product instanceof Ceramic){
+            product.print();
+         }
+     }
+
+     for (Product product : list) {
+         if(product instanceof Electronic){
+            product.print();
+         }
+     }
+     showEnd();
+        
     }
+
     public void sortDateNew(){
         Collections.sort(list, new CompareDateNew());
+        for (Product product : list){
+            product.print();
+        }
     }
+
     public void sortDateOld(){
         Collections.sort(list, new CompareDateOld());
     }
-}
+
+    public void sortTypeDate(){
+        Collections.sort(list, new CompareDateNew());
+        showHead();
+        for (Product product : list){
+           if(product instanceof Food){
+               product.print();
+           }
+        }
+        for (Product product : list) {
+            if(product instanceof Ceramic){
+                product.print();
+            }
+        }
+        for (Product product : list) {
+            if(product instanceof Electronic){
+                product.print();
+            }
+        }
+        showEnd();
+    }
+    public void sortTypePrice(){
+        Collections.sort(list , new CompareUP());
+        showHead();
+        for (Product product : list){
+           if(product instanceof Food){
+               product.print();
+           }
+        }
+        for (Product product : list) {
+            if(product instanceof Ceramic){
+                product.print();
+            }
+        }
+        for (Product product : list) {
+            if(product instanceof Electronic){
+                product.print();
+            }
+        }
+        showEnd();
+    }
+ }      
 
