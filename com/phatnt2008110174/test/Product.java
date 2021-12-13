@@ -91,20 +91,6 @@ public abstract class Product {
     }
 
     
-    public  void print(){
-
-        System.out.printf("│%11s│%11s│%11s│%15s│%11s│%11s│\n",getType(),getName(),getID(),getPrice(),getInventory(),FormatDate.formatDate.format(this.getDate()));
-    }
-    public void Statistic(){
-        
-    }
-    public int splitID(){
-        
-            String txt[] = getID().split(" ");
-            String numIDString = txt[1];
-            int numID = Integer.parseInt(numIDString);
-            
-            return numID;
-      
-    }
+    public abstract  void print();
+    public abstract void Statistic();
 }

@@ -143,19 +143,6 @@ public class Manager {
         return false;
     }
 
-    public Product searchFOODType(String type){
-        Product p = null;
-        for (Product product : list){
-            if (product instanceof Food){
-                Food food = (Food)product;
-                if (food.getType().equalsIgnoreCase(type)){
-                    p = food;
-                }
-            }
-        }
-        return p;
-    }
-
     public void sortPriceIncrease (){
        Collections.sort(list , new CompareUP());
        for (Product product : list){
@@ -245,5 +232,50 @@ public class Manager {
         }
         showEnd();
     }
+    public void searchType (String type){
+
+        int Count = 0;
+        showHead();
+        for (Product product : list ){
+            if(product.getType().equalsIgnoreCase(type)) {
+                product.print();
+                Count++;
+            }
+        }
+       if (Count == 0) {
+           System.out.println("Not found");
+       }
+       showEnd();
+    }
+    public void searchPrice(double min, double max){
+        int Count = 0;
+        showHead();
+        for (Product product : list){
+            if (product.getPrice() >= min && product.getPrice() <= max){
+                product.print();
+                Count ++;
+            }
+        }
+        if (Count == 0){
+            System.out.println("Not found");
+        }
+        showEnd();
+    }
+    public void searchDate(String oldest, String lastest)
+	{
+		int count = 0;
+		Date oldDate = FormatDate.date(oldest);
+		Date lastDate = FormatDate.date(lastest);
+		showHead();
+		for (Product product : list) {
+			if(product.getDate().compareTo(oldDate) >= 0 && product.getDate().compareTo(lastDate) <= 0 ){
+				product.print();
+				count ++;
+			}
+		}
+		if(count == 0)
+			System.out.println("Not found");
+		showEnd();
+	}
  }      
 
