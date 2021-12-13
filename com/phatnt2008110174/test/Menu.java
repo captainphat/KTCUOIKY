@@ -95,6 +95,8 @@ public  void setChoic(int choic) {
                 case 4:
                     menuSort();
                     break;
+                case 5:
+                    menuSearch();
                 default:
                     System.out.println("tinh nang chua duoc cap nhat");
                 
@@ -293,7 +295,62 @@ public void menuSort(){
         }
     }while(getChoic()<0 && getChoic() != 0);
 }
-
+    public void menuSearch(){
+        do {
+            list.show();
+            System.out.println("    Search  ");
+            System.out.println("1.Search type");
+            System.out.println("2.Seach price");
+            System.out.println("3.Seach date");
+            System.out.println("4.Back to menu");
+            int a = InputTool.input.nextInt();
+            setChoic(a);
+            ClearScreen.clear();
+            switch (getChoic()) {
+                case 1:
+                    ClearScreen.stop();
+                    list.show();
+                    System.out.println("Seach Type");
+                    System.out.println("Type: Food, Electronic, Ceramic");
+                    System.out.print("Enter your type:");
+                    String type = InputTool.input.nextLine();
+                    ClearScreen.clear();
+                    list.searchType(type);
+                    menu();
+                    break;
+                case 2:
+                    ClearScreen.stop();
+                    ClearScreen.clear();
+                    list.show();
+                    System.out.println("Seach Price");
+                    System.out.print("Enter your min price ");
+                    double min = InputTool.input.nextDouble();
+                    System.out.print("Enter your max price ");
+                    double max = InputTool.input.nextDouble();
+                    ClearScreen.clear();
+                    list.searchPrice(min, max);
+                    menu();
+                case 3:
+                    ClearScreen.stop();
+                    ClearScreen.clear();
+                    list.show();
+                    System.out.println("Seach Date");
+                    System.out.print("Enter your old Date:");
+                    String oldest = InputTool.input.nextLine();
+                    System.out.print("Enter your lastest Date:");
+                    String lastest = InputTool.input.nextLine();
+                    ClearScreen.clear();
+                    list.searchDate(oldest, lastest);
+                    menu();
+                case 4:
+                getMenu();
+                default:
+                    break;
+            }
+        }while(getChoic()<0 && getChoic() != 0);
+        
+    
+    }
 }
 
 
