@@ -12,8 +12,6 @@ public abstract class Product {
     private int Inventory;
     private String Type;
     private Date date;
-    private int SumOfProduct;
-    private double SumOfPrice;
     public Product(String Name,String ID, double Price, int Inventory, String Type, Date date) {
         this.Name = Name;
         this.Inventory = Inventory;
@@ -26,22 +24,7 @@ public abstract class Product {
     public Product() {
     }
 
-    public int getSumOfProduct() {
-        return SumOfProduct;
-    }
-
-    public void setSumOfProduct(int sumOfProduct) {
-        SumOfProduct = sumOfProduct;
-    }
-
-    public double getSumOfPrice() {
-        return SumOfPrice;
-    }
-
-    public void setSumOfPrice(double sumOfPrice) {
-        SumOfPrice = sumOfPrice;
-    }
-
+  
     public String getName() {
         return Name;
     }
@@ -92,5 +75,4 @@ public abstract class Product {
 
     
     public abstract  void print();
-    public abstract void Statistic();
 }

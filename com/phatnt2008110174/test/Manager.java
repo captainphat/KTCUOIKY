@@ -30,7 +30,14 @@ public class Manager {
         } 
         System.out.println("=============================================================================================");
     }
-
+    public void headStatistic(){
+        System.out.println("=============================");
+        System.out.println("|   Type   |    Quantity    |");
+        System.out.println("|==========|=================");
+    }
+    public void endStatistic(){
+       System.out.println("=============================");
+    }
     public void showHead(){
 
         System.out.println("=============================================================================================");
@@ -277,5 +284,28 @@ public class Manager {
 			System.out.println("Not found");
 		showEnd();
 	}
+    public void quantityOfType (){
+          if (Food.count>0){
+            System.out.println("|      FOOD|"+"               "+Food.getCount()+"|");
+        }  
+        if(Ceramic.Count>0){
+            System.out.println("|   Ceramic|"+"               "+Ceramic.getCount()+"|");
+        }
+        if(Electronic.Count>0){
+            System.out.println("|Electronic|"+"               "+Electronic.getCount()+"|");
+        }
+    }
+    public void quantityOfProduct(){
+        int sum;
+        sum = Food.getCount() + Electronic.getCount() + Ceramic.getCount();
+        System.out.println("|     Total|"+"               "+sum+"|");
+    }
+    public void totalOfPrice(){
+        double Total = 0;
+        for (Product product : list){
+          Total +=product.getPrice();
+        }
+        System.out.println("|   Total of Price:"+" "+Total+"$|");
+    }
  }      
 

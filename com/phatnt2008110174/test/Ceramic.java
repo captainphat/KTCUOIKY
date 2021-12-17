@@ -22,9 +22,13 @@ public class Ceramic extends Product {
         System.out.printf("│%11s│%19s│%11s│%8s$/Per│%8s piece│%18s│\n",getType(),getName(),getID(),getPrice(),getInventory(),FormatDate.formatDate.format(this.getDate()));
     }
 
-    @Override
-    public void Statistic() {
-        // TODO Auto-generated method stub
-        
+    public static int getCount() {
+        return Count;
     }
+
+    public static void setCount(int count) {
+        Count = count;
+    }
+
+    
 }

@@ -18,8 +18,13 @@ public class Food extends Product {
         public void print() {
             System.out.printf("│%11s│%19s│%11s│%8s $/Kg│%11s Kg│%18s│\n",getType(),getName(),getID(),getPrice(),getInventory(),FormatDate.formatDate.format(this.getDate()));
         }
-        @Override
-        public void Statistic() {
-            System.out.printf("│%11sSum of Product: │%19s│%11s Sum of Price: │%19s│\n",getSumOfProduct(),getSumOfPrice());
+        public static int getCount() {
+            return count;
         }
+
+        public static void setCount(int count) {
+            Food.count = count;
+        }
+
+      
 }
