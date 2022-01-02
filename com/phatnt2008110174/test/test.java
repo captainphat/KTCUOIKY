@@ -10,7 +10,7 @@ public class test {
     public static void main(String[] args) {
         // Manager list = new Manager();
        
-        // // // // FoodManager foodManager = new FoodManager();
+        // // FoodManager foodManager = new FoodManager();
         // // Product product ;
         
         // Food carrot = new Food("Carrot", 4, 500,FormatDate.date("3/2/2020"));
@@ -27,16 +27,16 @@ public class test {
         // // CeramicManager ceramicManager = new CeramicManager();
         // Ceramic chen = new Ceramic("bowl", 2.99, 500, FormatDate.date("22/2/2020"));
         // list.add(chen);
-        // // // list.show();
-        // // System.out.println("test");    
-        // // ElectronicManager electronicManager = new ElectronicManager();
-        // // Electronic PC = electronicManager.inputcElectronic();
-        // // list.add(PC);
         // // list.show();
-        // // System.out.println("******************");
-        // // list.remove(carrot);
+        // System.out.println("test");    
+        // ElectronicManager electronicManager = new ElectronicManager();
+        // Electronic PC = electronicManager.inputcElectronic();
+        // list.add(PC);
+        // list.show();
+        // System.out.println("******************");
+        // list.remove(carrot);
 
-        // // list.show();
+        // list.show();
         
         Menu menu = new Menu();
         menu.autoInput();

@@ -71,11 +71,11 @@ public class Manager {
            
             if(product.getID().equalsIgnoreCase(iD)){
                 System.out.println("ID of Product: "+iD);
-                String name = InputTool.input.nextLine();
+                
                 System.out.print("Enter the name to change : ");
                 String oName = InputTool.input.nextLine();
-                name = oName;
-                product.setName(name);
+              
+                product.setName(oName);
                 ClearScreen.clear();
                 System.out.println("ID of Product: "+iD);
                 System.out.println("Change name to: "+ product.getName());
@@ -305,7 +305,7 @@ public class Manager {
         for (Product product : list){
           Total +=product.getPrice();
         }
-        System.out.println("|   Total of Price:"+" "+Total+"$|");
+        System.out.printf("|  Total of Price: %.2f $|\n", Total);
     }
  }      
 

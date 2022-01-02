@@ -200,7 +200,7 @@ public void MeneChange (){
         oID = TempoID;
         ClearScreen.clear();
         list.show();
-        // System.out.println("Mã sản đang được đổi: "+product.getID());
+         System.out.println("   Change");
         System.out.println("1. Change name");
         System.out.println("2. Change price");
         System.out.println("3.Change import date");
@@ -219,6 +219,7 @@ public void MeneChange (){
                 list.show();
                 ClearScreen.stop();
                 getMenu();
+                break;
             case 2:
                 ClearScreen.stop();
                 list.show();
@@ -229,6 +230,7 @@ public void MeneChange (){
                 System.out.println("Enter to continue");
                 InputTool.input.nextLine();
                 getMenu();
+                break;
             case 3:
                 ClearScreen.stop();
                 list.show();
@@ -238,6 +240,7 @@ public void MeneChange (){
                 System.out.println("Enter to continue");
                 InputTool.input.nextLine();
                 getMenu();
+                break;
             case 4:
                 ClearScreen.stop();
                 list.show();
@@ -248,6 +251,7 @@ public void MeneChange (){
                 System.out.println("Enter to continue");
                 InputTool.input.nextLine();
                 getMenu();
+                break;
             default:
                 MeneChange();
                 break;
