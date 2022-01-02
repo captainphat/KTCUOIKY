@@ -67,7 +67,6 @@ public  void setChoic(int choic) {
     public  void menu(){
         int x;
         do{
-            
             System.out.println("          Menu            ");
             System.out.println("1. ADD  ");
             System.out.println("2. Remove    ");
@@ -81,11 +80,8 @@ public  void setChoic(int choic) {
             ClearScreen.clear();
             setChoic(x);
               switch (getChoic()) {
-                case 0:  
-                    System.out.println("Exit!!");
-                    break;
                 case 1:
-                    menuAdd(); //add
+                    menuAdd(); 
                     break;
                 case 2:
                     menuRemove();
@@ -98,13 +94,20 @@ public  void setChoic(int choic) {
                     break;
                 case 5:
                     menuSearch();
+                    break;
                 case 6:
                     menuStatistical();
-                default:
-                    System.out.println("tinh nang chua duoc cap nhat");
+                    break;
                 
+                default:
+                    list.show();
+                    menu();
+                    break;
+                case 0:
+                    System.out.println("Exit!!");
+                    break;
               }
-          }while(choic != 0 && choic<0);
+          }while(choic !=0 && choic > 0); 
     }
     public void menuAdd(){
         int xx;
@@ -119,11 +122,12 @@ public  void setChoic(int choic) {
             System.out.println("3. ELECTRONIC");
             System.out.println("0.Back to menu ");
             System.out.print("Your choose: ");
-            xx = InputTool.input.nextInt();
+            xx = InputTool.input.nextInt(); 
             ClearScreen.clear();
             setChoic(xx);
               switch (getChoic()) {
                   case 1:
+                    
                       Food food = foodManager.inputFood();
                       list.add(food);
                       ClearScreen.stop();
@@ -144,10 +148,13 @@ public  void setChoic(int choic) {
                   case 0:
                      ClearScreen.stop(); 
                       getMenu();
-                  default:
-                      break;
+                      ClearScreen.stop();
+                //  default:
+                //         ClearScreen.clear();
+                //         getMenu();
+                //         break;
               }
-      }while(getChoic() == 0 && getChoic() !=0);
+      }while(getChoic() > 3);
    }
 public void menuRemove (){
     
@@ -158,7 +165,7 @@ public void menuRemove (){
         System.out.println("Remove !!! ");
         System.out.println("1. Remove ");
         System.out.println("0. Back to menu");
-        System.out.println("Your choose: ");
+        System.out.print("Your choose: ");
         xxx = InputTool.input.nextInt();
         ClearScreen.clear();
         setChoic(xxx);
@@ -169,14 +176,16 @@ public void menuRemove (){
                 System.out.print("Product ID: ");
                 String tempID = InputTool.input.nextLine();
                 iD = tempID;
-                iD = InputTool.input.nextLine();
+                // iD = InputTool.input.nextLine();
                 list.RemoveID(iD);
                 ClearScreen.stop();
                 getMenu();
                 break;
+            default:
+                menuRemove();
+                break;
             case 0:
                 getMenu();
-            default:
                 break;
         }
     }while(getChoic() == 0 && getChoic() !=0);
@@ -196,6 +205,7 @@ public void MeneChange (){
         System.out.println("2. Change price");
         System.out.println("3.Change import date");
         System.out.println("4. Change quantity");
+        System.out.println("0. Back to menu");
         System.out.print("Your choose: ");
         int Ochose = InputTool.input.nextInt();
         setChoic(Ochose);
@@ -207,8 +217,7 @@ public void MeneChange (){
                 System.out.println("    Change name ");
                 list.changeName(oID);
                 list.show();
-                System.out.println("Enter to continue");
-                InputTool.input.nextLine();
+                ClearScreen.stop();
                 getMenu();
             case 2:
                 ClearScreen.stop();
@@ -240,6 +249,10 @@ public void MeneChange (){
                 InputTool.input.nextLine();
                 getMenu();
             default:
+                MeneChange();
+                break;
+            case 0:
+                getMenu();
                 break;
         }
     }while(getChoic() == 0 && getChoic() !=0);
@@ -249,61 +262,58 @@ public void menuSort(){
         list.show();
         System.out.println("    Sort    ");
         System.out.println("1.Type");
-        System.out.println("2.Import date");
-        System.out.println("3.Price Increase");
-        System.out.println("4.Price Decrease");
-        System.out.println("5.Date New");
-        System.out.println("6.Date Oldest");
-        System.out.println("7.Type & import date");
-        System.out.println("8.Type & price");
+        System.out.println("2.Price Increase");
+        System.out.println("3.Price Decrease");
+        System.out.println("4.Date New");
+        System.out.println("5.Date Oldest");
+        System.out.println("6.Type & import date");
+        System.out.println("7.Type & price");
         System.out.println("0. Back to menu");
         System.out.print("Your choose: ");
         int a = InputTool.input.nextInt();
         setChoic(a);
         ClearScreen.clear();
         switch (getChoic()) {
-            case 0:
-                getMenu();
             case 1:
                 list.sortID();
-                ClearScreen.stop();
-                
                 menu();
                 break;
-            case 2:
-                System.out.println("sort Import date");
-            case 3 :
+            case 2 :
                 System.out.println("Sort Price Increase");
                 list.sortPriceIncrease();
                 ClearScreen.stop();
                  getMenu();
-            case 4:
+            case 3:
                 System.out.println("Sort Price Decrease");
                 list.sortPriceDecrease();
                 ClearScreen.stop();
                 getMenu();
-            case 5:
+            case 4:
                 System.out.println("Sort Date New");
                 list.sortDateNew();
                 ClearScreen.stop();
                 getMenu();
-            case 6:
+            case 5:
                 System.out.println("Sort Date Oldest");
                 list.sortDateOld();
                 ClearScreen.stop();
                 getMenu();
-            case 7:
+            case 6:
                 System.out.println("Sort type & import date");
                 list.sortTypeDate();
                 ClearScreen.stop();
                 menu();
-            case 8:
+            case 7:
                 System.out.println("Sort type & price");
                 list.sortTypePrice();
                 ClearScreen.stop();
                 menu();
             default:
-                
+                menuSort();
+                break;
+            case 0:
+                getMenu();
+                break;
         }
     }while(getChoic()<0 && getChoic() != 0);
 }
@@ -315,6 +325,7 @@ public void menuSort(){
             System.out.println("2.Seach price");
             System.out.println("3.Seach date");
             System.out.println("0.Back to menu");
+            System.out.print("Your choose: ");
             int a = InputTool.input.nextInt();
             setChoic(a);
             ClearScreen.clear();
@@ -362,7 +373,7 @@ public void menuSort(){
         }while(getChoic()<0 && getChoic() != 0);
     }
     public void menuStatistical(){
-       ClearScreen.stop();
+        InputTool.input.nextLine();
        list.headStatistic();
        list.quantityOfType();
        list.endStatistic();

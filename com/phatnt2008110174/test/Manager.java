@@ -80,7 +80,7 @@ public class Manager {
                 System.out.println("ID of Product: "+iD);
                 System.out.println("Change name to: "+ product.getName());
                 return  true;
-        } 
+            } 
         }
         System.out.println("Not found !!!");
         return false;
@@ -142,9 +142,6 @@ public class Manager {
                 System.out.println("Change Price to: "+ product.getInventory());
                 return true;
             }
-            
-            
-            
         }
             System.out.println("Not found !!!");
         return false;
@@ -197,6 +194,9 @@ public class Manager {
 
     public void sortDateOld(){
         Collections.sort(list, new CompareDateOld());
+        for (Product product : list){
+            product.print();
+        }
     }
 
     public void sortTypeDate(){
